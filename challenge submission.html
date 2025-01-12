@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKE GOV.UK</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter/3.19.3/inter.css" rel="stylesheet">
+    <style>
+        /* Modern font and styling */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            --background-color: white;
+            --text-color: #1a1a1a;
+            --accent-color: #0284c7;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .theme-yellow {
+            --background-color: #fcfae7;
+            --text-color: #1a1a1a;
+            --accent-color: #ca8a04;
+        }
+
+        .theme-blue {
+            --background-color: #cbe7fa;
+            --text-color: #1a1a1a;
+            --accent-color: #0284c7;
+        }
+
+        .theme-dark {
+            --background-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+        }
+
+        .header {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .theme-dark .card {
+            background-color: #1e293b;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .modern-select {
+            background-color: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em 1.5em;
+            transition: all 0.2s;
+        }
+
+        .modern-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .modern-button:hover {
+            filter: brightness(110%);
+            transform: translateY(-1px);
+        }
+
+        .hover-link {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hover-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .hover-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="header">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <div class="text-3xl font-bold tracking-tight">fake GOV.UK</div>
+            <select id="themeSelector" class="modern-select text-gray-800">
+                <option value="default">Default theme</option>
+                <option value="yellow">Light Yellow (Dyslexia-friendly)</option>
+                <option value="blue">Light Blue (Reduced eye strain)</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-6xl p-8">
+        <h1 class="text-5xl font-bold mb-12 tracking-tight">Welcome to GOV.UK</h1>
+        
+        <div class="grid gap-8 md:grid-cols-2">
+            <section class="card">
+                <h2 class="text-2xl font-semibold mb-6">Popular Services</h2>
+                <ul class="space-y-4">
+                    <li class="hover-link">Find a job</li>
+                    <li class="hover-link">Universal Credit</li>
+                    <li class="hover-link">Passport fees</li>
+                    <li class="hover-link">Book a driving test</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2 class="text-2xl font-semibold mb-6">Government Activity</h2>
+                <p class="mb-6 text-lg">
+                    The UK government is working to protect and improve people's lives and democracy through:
+                </p>
+                <ul class="space-y-3 text-lg">
+                    <li class="flex items-center">
+                        
+                        Creating jobs and supporting the economy
+                    </li>
+                    <li class="flex items-center">
+                        
+                        Making sure people have the skills needed for work
+                    </li>
+                    <li class="flex items-center">
+                        
+                        Supporting the NHS and social care system
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="mt-12">
+            <button class="modern-button">Get Started</button>
+        </section>
+    </main>
+
+    <footer class="mt-16 border-t border-gray-200 bg-gray-50">
+        <div class="container mx-auto max-w-6xl p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li class="hover-link">Help</li>
+                        <li class="hover-link">Cookies</li>
+                        <li class="hover-link">Contact</li>
+                        <li class="hover-link">Terms and conditions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Government</h3>
+                    <ul class="space-y-3">
+                        <li class="hover-link">Departments</li>
+                        <li class="hover-link">News</li>
+                        <li class="hover-link">Guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <h3 class="text-xl font-semibold mb-6">About us</h3>
+    <p>The government website is here to act as a gateway for citizens to reach out to find information that they need in order to be able to live their lives to the greatest quality theat they can.</p>
+    <p>We are heavily motivated in creating improvement in our society to allow freedom and liberty to all people who live on our soil. This website will provide the tools and information to see how you can live as a successful civilian while helping yourself and others.</p>
+    <script>
+        const themeSelector = document.getElementById('themeSelector');
+        
+        themeSelector.addEventListener('change', (e) => {
+            document.body.classList.remove('theme-yellow', 'theme-blue', 'theme-dark');
+            if (e.target.value !== 'default') {
+                document.body.classList.add(`theme-${e.target.value}`);
+            }
+        });
+    </script>
+</body>
+</html>
